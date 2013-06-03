@@ -33,20 +33,22 @@
             var currentMaxHeight = (maxHeight) ? maxHeight : 0;
             if (this.is("img")) {
                 this.each(function(index, value) {
-                    $(value).load(function() {
-                        var imgWidth = $(value).width();
-                        var imgHeight = $(value).height();
+                    var img = new Image();
+                    img.onload = function() {
+                        var imgWidth = this.width;
+                        var imgHeight = this.height;
                         calcWidthAndHeight(currentMaxWidth, currentMaxHeight, imgWidth, imgHeight);
                         $(value).width(calculatedWidth);
                         $(value).height(calculatedHeight);
-                    });
+                    };
+                    img.src = $(value).attr("src");
                 });
             } else {
                 $("img", this).each(function (index, value) {
                     var img = new Image();
                     img.onload = function () {
-                        var imgWidth = $(value).width();
-                        var imgHeight = $(value).height();
+                        var imgWidth = this.width;
+                        var imgHeight = this.height;
                         calcWidthAndHeight(currentMaxWidth, currentMaxHeight, imgWidth, imgHeight);
                         $(value).width(calculatedWidth);
                         $(value).height(calculatedHeight);
