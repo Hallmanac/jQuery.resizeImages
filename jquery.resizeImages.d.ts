@@ -1,3 +1,8 @@
+// Type definitions for jQuery.resizeImages.js 
+// Project: https://github.com/Hallmanac/jQuery.resizeImages
+// Definitions by: Brian Hall
+// Definitions: https://github.com/borisyankov/DefinitelyTyped
+
 /* *****************************************************************************
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the
@@ -11,7 +16,7 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
-/// <reference path="jquery.d.ts"/>
+/// <reference path="../jquery/jquery.d.ts"/>
 
 interface JQuery {
     resizeImages( maxWidth?: number, maxHeight?: number ) : JQuery;
